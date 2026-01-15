@@ -33,6 +33,7 @@ import pyautogui
 import time
 import pandas
 
+2️⃣ Abertura do navegador e acesso ao sistema
 pyautogui.PAUSE = 0.5
 pyautogui.press("win")
 pyautogui.write("Chrome")
@@ -43,7 +44,7 @@ pyautogui.write(link)
 pyautogui.press("enter")
 time.sleep(3)
 
-Login automatizado no sistema
+### 3️⃣ Login automatizado no sistema
 
 pyautogui.click(x=822, y=372)
 pyautogui.write("pythonimpressionador@gmail.com")
@@ -53,12 +54,13 @@ pyautogui.press("tab")
 pyautogui.press("enter")
 time.sleep(4)
 
-Leitura da base de dados (CSV)
+### 4️⃣ Leitura da base de dados (CSV)
 
 tabela = pandas.read_csv("produtos.csv")
 print(tabela)
 
-Loop de cadastro dos produtos
+
+###5️⃣ Loop de cadastro dos produtos
 
 for linha in tabela.index:
     pyautogui.click(x=756, y=263)
@@ -66,14 +68,14 @@ for linha in tabela.index:
     pyautogui.write(codigo)
     pyautogui.press("tab")
 
-
+###6️⃣ Tratamento de valores nulos
 Tratamento de valores nulos
 
 obs = str(tabela.loc[linha, "obs"])
 if obs != "nan":
     pyautogui.write(obs)
 
-
+###7️⃣ Envio do formulário e ajuste da tela
 Envio do formulário e ajuste da tela
 
 pyautogui.press("tab")
